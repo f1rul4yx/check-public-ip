@@ -13,9 +13,9 @@ verification_root() {
 
 install_all() {
   read -p "Introduce el correo electrónico que has configurado para enviar los cambios: " MAIL
-  sed -i "s|your_mail@gmail.com|$MAIL|" script/check-public-ip.sh
   cp systemd/* /etc/systemd/system/
   cp script/check-public-ip.sh /usr/local/bin/
+  sed -i "s|your_mail@gmail.com|$MAIL|g" /usr/local/bin/check-public-ip.sh
   systemctl daemon-reload
   systemctl enable --now check-public-ip.timer
   echo -e "${VERDE}[+] El servicio se instalo correctamente.${RESET}"
