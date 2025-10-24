@@ -12,7 +12,7 @@ verification_root() {
 }
 
 install_all() {
-  whatis curl
+  whereis curl
   if [[ $? -ne 0 ]]; then
     apt install curl -y
   fi
