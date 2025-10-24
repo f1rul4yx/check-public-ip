@@ -12,14 +12,14 @@ verification_root() {
 }
 
 remove_all() {
-  sudo systemctl stop check-public-ip.timer
-  sudo systemctl stop check-public-ip.service
-  sudo systemctl disable check-public-ip.timer
-  sudo systemctl disable check-public-ip.service
+  sudo systemctl stop check-public-ip.timer &>/dev/null
+  sudo systemctl stop check-public-ip.service &>/dev/null
+  sudo systemctl disable check-public-ip.timer &>/dev/null
+  sudo systemctl disable check-public-ip.service &>/dev/null
   rm -r /etc/check-public-ip
   rm -r /etc/systemd/system/check-public-ip*
   rm -r /usr/local/bin/check-public-ip.sh
-  systemctl daemon-reload
+  systemctl daemon-reload &>/dev/null
   echo -e "${VERDE}[+] El servicio se desinstalo correctamente.${RESET}"
 }
 
