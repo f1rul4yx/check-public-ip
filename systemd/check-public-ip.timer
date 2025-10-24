@@ -1,0 +1,10 @@
+[Unit]
+Description=Ejecuta rsync-backup-systemd cada 5 minutos
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=5min
+Unit=rsync-backup-systemd.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,6 @@
+[Unit]
+Description=Chequeo de IP Pública
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /usr/local/bin/rsync-backup-systemd.sh
