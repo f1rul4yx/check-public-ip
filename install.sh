@@ -17,7 +17,7 @@ install_all() {
   cp systemd/* /etc/systemd/system/
   cp script/check-public-ip.sh /usr/local/bin/
   systemctl daemon-reload
-  systemctl enable --now check-public-ip.sh.timer
+  systemctl enable --now check-public-ip.timer
   echo -e "${VERDE}[+] El servicio se instalo correctamente.${$RESET}"
 }
 
