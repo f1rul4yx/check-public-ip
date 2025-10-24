@@ -20,7 +20,7 @@ remove_all() {
   rm -r /etc/systemd/system/check-public-ip*
   rm -r /usr/local/bin/check-public-ip.sh
   systemctl daemon-reload
-  echo -e "${VERDE}[+] El servicio se desinstalo correctamente.${$RESET}"
+  echo -e "${VERDE}[+] El servicio se desinstalo correctamente.${RESET}"
 }
 
 verification_root

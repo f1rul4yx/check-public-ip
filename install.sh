@@ -18,7 +18,7 @@ install_all() {
   cp script/check-public-ip.sh /usr/local/bin/
   systemctl daemon-reload
   systemctl enable --now check-public-ip.timer
-  echo -e "${VERDE}[+] El servicio se instalo correctamente.${$RESET}"
+  echo -e "${VERDE}[+] El servicio se instalo correctamente.${RESET}"
 }
 
 verification_root
