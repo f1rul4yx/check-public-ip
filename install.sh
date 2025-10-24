@@ -12,8 +12,7 @@ verification_root() {
 }
 
 install_all() {
-  whereis curl
-  if [[ $? -ne 0 ]]; then
+  if ! dpkg -s curl; then
     apt install curl -y
   fi
   read -p "Introduce el correo electrónico que has configurado para enviar los cambios: " MAIL
