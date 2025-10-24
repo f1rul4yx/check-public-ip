@@ -12,6 +12,10 @@ verification_root() {
 }
 
 install_all() {
+  whatis curl
+  if [[ $? -ne 0 ]]; then
+    apt install curl -y
+  fi
   read -p "Introduce el correo electrónico que has configurado para enviar los cambios: " MAIL
   cp systemd/* /etc/systemd/system/
   cp script/check-public-ip.sh /usr/local/bin/
