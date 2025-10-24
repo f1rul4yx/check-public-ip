@@ -12,12 +12,12 @@ verification_root() {
 }
 
 install_all() {
-  echo "Introduce el correo electrónico que has configurado para enviar los cambios: " MAIL
+  read -p "Introduce el correo electrónico que has configurado para enviar los cambios: " MAIL
   sed -i "s|your_mail@gmail.com|$MAIL|" script/check-public-ip.sh
   cp systemd/* /etc/systemd/system/
   cp script/check-public-ip.sh /usr/local/bin/
   systemctl daemon-reload
-  systemctl enable --now rsync-backup-systemd.timer
+  systemctl enable --now check-public-ip.sh.timer
   echo -e "${VERDE}[+] El servicio se instalo correctamente.${$RESET}"
 }
 
